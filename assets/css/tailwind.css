@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-item {
+    @apply p-2 m-1 my-2 bg-primary-gray hover:bg-indigo-500 rounded text-white no-underline;
+  }
+}

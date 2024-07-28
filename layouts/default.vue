@@ -1,19 +1,26 @@
 <template>
-  <div class="flex justify-between w-screen bg-gray-700">
-    <div class="flex">
-      <div id="logo" class="bg-gray-900 text-white p-3">Logo</div>
+  <div class="flex h-dvh">
+    <div class="flex justify-between bg-dirty-gray">
+      <div class="flex flex-col">
+        <div
+          id="logo"
+          class="flex justify-center bg-primary-gray text-white p-3"
+        >
+          Logo
+        </div>
 
-      <ul id="nav" class="flex items-center bg-blue-200 list-none p-0 m-0">
-        <li class="p-2 m-1 hover:bg-indigo-500 rounded">
-          <NuxtLink to="/home">Home</NuxtLink>
-        </li>
-        <li class="p-2 m-1 hover:bg-indigo-500 rounded">
-          <NuxtLink to="/devices">Devices</NuxtLink>
-        </li>
-      </ul>
+        <div
+          id="nav"
+          class="flex flex-col h-full items-center list-none p-1 py-5 m-0"
+        >
+          <NuxtLink class="nav-item" to="/home"> Home </NuxtLink>
+          <NuxtLink class="nav-item" to="/devices"> Devices </NuxtLink>
+        </div>
+      </div>
     </div>
 
-    <div id="search" class="flex items-center">Search</div>
+    <slot></slot>
   </div>
-  <slot></slot>
 </template>
+
+<style scoped lang="css"></style>
