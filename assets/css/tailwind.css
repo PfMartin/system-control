@@ -4,6 +4,6 @@
 
 @layer components {
   .nav-item {
-    @apply flex justify-center w-16 p-2 m-1 my-2 bg-primary-gray hover:bg-indigo-500 rounded text-white no-underline transition-colors;
+    @apply hover:border-electric-violet-1 m-1 my-2 flex w-16 justify-center rounded border border-solid border-transparent bg-primary-gray p-2 text-white no-underline transition-colors;
   }
 }
