@@ -10,11 +10,18 @@ import type { RoutesConfig } from '~/components/NavBar.vue';
 const routesConfig: RoutesConfig[] = [
   {
     name: 'Home',
-    path: '/home',
+    path: '/',
+    icon: 'uil:home-alt',
   },
   {
     name: 'Devices',
     path: '/devices',
+    icon: 'uil:processor',
+  },
+  {
+    name: 'Config',
+    path: '/config',
+    icon: 'uil:cog',
   },
 ];
 </script>

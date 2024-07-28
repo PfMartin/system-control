@@ -21,8 +21,10 @@
               isCurrentPath(route.path) ? 'nav-item-selected' : '',
             ]"
             :to="route.path"
-            >{{ route.name }}</NuxtLink
           >
+            <Icon v-if="!!route.icon" :name="route.icon" />
+            <span v-else>{{ route.name }}</span>
+          </NuxtLink>
         </div>
       </div>
     </div>
