@@ -9,6 +9,8 @@ export default {
       colors: {
         'dirty-gray': '#1d1d1d',
         'primary-gray': '#333',
+        'secondary-gray': '#121212',
+        'primary-white': '#f3f3f3',
         'electric-violet-5': '#6000a4',
         'electric-violet-4': '#6b00ba',
         'electric-violet-3': '#7500d0',

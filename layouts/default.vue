@@ -1,7 +1,8 @@
 <template>
-  <NavBar :routes-config="routesConfig" />
-
-  <slot></slot>
+  <div class="bg-secondary-gray text-primary-white flex h-dvh">
+    <NavBar :routes-config="routesConfig" />
+    <slot></slot>
+  </div>
 </template>
 
 <script setup lang="ts">
