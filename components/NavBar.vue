@@ -13,12 +13,34 @@
           id="nav"
           class="m-0 flex h-full list-none flex-col items-center p-1 py-5"
         >
-          <NuxtLink class="nav-item" to="/home"> Home </NuxtLink>
-          <NuxtLink class="nav-item" to="/devices"> Devices </NuxtLink>
+          <NuxtLink
+            v-for="route in routesConfig"
+            :key="route.name"
+            :class="[
+              'nav-item',
+              isCurrentPath(route.path) ? 'nav-item-selected' : '',
+            ]"
+            :to="route.path"
+            >{{ route.name }}</NuxtLink
+          >
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+export interface RoutesConfig {
+  name: string;
+  path: string;
+  icon?: string;
+  subroutes?: RoutesConfig;
+}
+
+defineProps<{
+  routesConfig: RoutesConfig[];
+}>();
+
+const route = useRoute();
+const isCurrentPath = (path: string) => path === route.fullPath;
+</script>

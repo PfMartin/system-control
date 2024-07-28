@@ -6,4 +6,8 @@
   .nav-item {
     @apply hover:border-electric-violet-1 m-1 my-2 flex w-16 justify-center rounded border border-solid border-transparent bg-primary-gray p-2 text-white no-underline transition-colors;
   }
+
+  .nav-item-selected {
+    @apply bg-electric-violet-1;
+  }
 }
