@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-between bg-dirty-gray">
-    <div class="flex flex-col">
+  <div class="flex" @mouseleave="hoveredRoute && collapseSubroutes()">
+    <div id="nav-bar" class="flex flex-col bg-dirty-gray">
       <div
         id="logo"
         class="flex justify-center bg-primary-gray p-3 text-primary-white"
@@ -25,10 +25,32 @@
             isCurrentPath(route.path) ? 'nav-item-selected' : '',
           ]"
           :to="route.path"
+          @mouseenter="
+            route.subroutes ? expandSubroutes(route) : collapseSubroutes()
+          "
         >
           <Icon v-if="!!route.icon" :name="route.icon" />
           <span v-else>{{ route.name }}</span>
         </NuxtLink>
+      </div>
+    </div>
+
+    <div
+      v-if="hoveredRoute"
+      id="sub-nav-popup"
+      class="absolute left-14 h-dvh bg-primary-gray transition-all"
+    >
+      <div class="flex flex-col">
+        <h4 class="m-1 mb-4 p-2">{{ hoveredRoute.name }}</h4>
+        <div>
+          <NuxtLink
+            v-for="subroute in hoveredRoute.subroutes"
+            :key="subroute.name"
+            :to="subroute.path"
+            class="m-1 flex flex-col rounded p-2 text-primary-white no-underline transition-colors hover:cursor-pointer hover:bg-electric-violet-1"
+            >{{ subroute.name }}</NuxtLink
+          >
+        </div>
       </div>
     </div>
   </div>
@@ -39,7 +61,10 @@ export interface RoutesConfig {
   name: string;
   path: string;
   icon?: string;
-  subroutes?: RoutesConfig;
+  subroutes?: {
+    name: string;
+    path: string;
+  }[];
 }
 
 defineProps<{
@@ -48,4 +73,13 @@ defineProps<{
 
 const route = useRoute();
 const isCurrentPath = (path: string) => path === route.fullPath;
+
+const hoveredRoute = ref<RoutesConfig | null>(null);
+const expandSubroutes = (route: RoutesConfig) => {
+  hoveredRoute.value = route;
+};
+
+const collapseSubroutes = () => {
+  hoveredRoute.value = null;
+};
 </script>

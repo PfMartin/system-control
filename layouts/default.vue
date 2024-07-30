@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-secondary-gray text-primary-white flex h-dvh">
+  <div class="flex h-dvh bg-secondary-gray text-primary-white">
     <NavBar :routes-config="routesConfig" />
     <slot></slot>
   </div>
@@ -18,6 +18,16 @@ const routesConfig: RoutesConfig[] = [
     name: 'Devices',
     path: '/devices',
     icon: 'uil:processor',
+    subroutes: [
+      {
+        name: 'Overview',
+        path: '/devices',
+      },
+      {
+        name: 'Configuration',
+        path: '/devices/config',
+      },
+    ],
   },
   {
     name: 'Config',

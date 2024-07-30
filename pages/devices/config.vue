@@ -1,0 +1,1 @@
+<template>Devices config</template>
