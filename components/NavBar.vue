@@ -3,9 +3,14 @@
     <div class="flex flex-col">
       <div
         id="logo"
-        class="text-primary-white flex justify-center bg-primary-gray p-3"
+        class="flex justify-center bg-primary-gray p-3 text-primary-white"
       >
-        Logo
+        <NuxtLink class="text-primary-white" :to="routesConfig[0].path">
+          <Icon
+            class="text-3xl transition-colors hover:text-electric-violet-1"
+            name="uil:server-network"
+          />
+        </NuxtLink>
       </div>
 
       <div
