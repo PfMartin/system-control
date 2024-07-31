@@ -1,7 +1,5 @@
 <template>
-  <h1>Devices</h1>
+  <h1>Devices Overview</h1>
 </template>
 
-<script setup lang="ts">
-console.log('he');
-</script>
+<script setup lang="ts"></script>

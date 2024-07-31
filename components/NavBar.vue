@@ -72,7 +72,12 @@ defineProps<{
 }>();
 
 const route = useRoute();
-const isCurrentPath = (path: string) => path === route.fullPath;
+
+// TODO: Set current path to first level path, in order to highlight the selected path
+const isCurrentPath = (routePath: string) => {
+  const separator = new RegExp('\/');
+  return routePath.split(separator)[1] === route.path.split(separator)[1];
+};
 
 const hoveredRoute = ref<RoutesConfig | null>(null);
 const expandSubroutes = (route: RoutesConfig) => {
