@@ -4,10 +4,14 @@
 
 @layer components {
   .nav-item {
-    @apply hover:border-electric-violet-1 text-primary-white m-1 my-2 flex justify-center rounded border border-solid border-transparent bg-primary-gray p-2 text-2xl no-underline transition-colors;
+    @apply m-1 my-2 flex justify-center rounded border border-solid border-transparent bg-primary-gray p-2 text-2xl text-primary-white no-underline transition-colors hover:border-electric-violet-1;
   }
 
   .nav-item-selected {
-    @apply bg-electric-violet-1 hover:border-primary-white border border-solid border-transparent transition-colors;
+    @apply border border-solid border-transparent bg-electric-violet-1 transition-colors hover:border-primary-white;
+  }
+
+  .btn-primary {
+    @apply rounded border border-solid border-transparent bg-primary-gray p-2 text-primary-white outline-none transition-colors hover:cursor-pointer hover:border-electric-violet-1;
   }
 }

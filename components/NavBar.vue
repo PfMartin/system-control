@@ -3,7 +3,7 @@
     <div id="nav-bar" class="flex flex-col bg-dirty-gray">
       <div
         id="logo"
-        class="flex justify-center bg-primary-gray p-3 text-primary-white"
+        class="flex h-8 justify-center bg-primary-gray p-3 text-primary-white"
       >
         <NuxtLink class="text-primary-white" :to="routesConfig[0].path">
           <Icon
