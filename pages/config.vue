@@ -4,6 +4,6 @@
 
 <script setup lang="ts">
 definePageMeta({
-  groupName: 'Configuration',
+  groupName: 'System Configuration',
 });
 </script>

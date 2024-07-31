@@ -3,7 +3,7 @@
     <NavBar :routes-config="routesConfig" />
     <div id="content" class="w-screen">
       <div class="flex h-14 items-center justify-between bg-primary-gray">
-        <h2 class="p-4">{{ activeRoute }}</h2>
+        <h3 class="p-4">{{ activeRoute }}</h3>
         <div id="search" class="flex items-center gap-2 p-4">
           <Icon name="uil:search"></Icon>
           <p>Search</p>
