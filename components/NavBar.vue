@@ -73,7 +73,6 @@ defineProps<{
 
 const route = useRoute();
 
-// TODO: Set current path to first level path, in order to highlight the selected path
 const isCurrentPath = (routePath: string) => {
   const separator = new RegExp('\/');
   return routePath.split(separator)[1] === route.path.split(separator)[1];
